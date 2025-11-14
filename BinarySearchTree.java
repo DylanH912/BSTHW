@@ -321,11 +321,26 @@ public class BinarySearchTree<T extends Comparable<T>> implements BSTInterface<T
     the max depth.
     */
     public int maxDepth() {
-        //return(maxDepth(root));
-        return 0;
+        if(root.getInfo() == null){
+            return null;
+        }
+        return(maxDepth(root));
+        
     }
     private int maxDepth(Node node) {
-        return 0;
+        if(node.getInfo() == null){
+            return null;
+        }
+        else if(node.getLeft() != null){
+            return(1 + maxDepth(node.getLeft())
+        }
+        else if(node.getRight() != null){
+            return(1 + maxDepth(node.getRight())
+        }
+        else{
+            return 1;
+        }
+        
     }
 
     //TODO: 
@@ -335,13 +350,22 @@ public class BinarySearchTree<T extends Comparable<T>> implements BSTInterface<T
     the min value.
     */
     public int minValue() {
-        //return( minValue(root) );
-        return 0;
+        if(root.getInfo() != null){
+            return( minValue(root) );
+        }
+
+        else{
+            return 0;
+        }
     }
 
     
     private int minValue(Node node) {
-       return 0;
+        if(node.getLeft() != null){
+           return minValue(node.getLeft());
+        }
+        else
+            return node.getInfo();
     }
 
     //TODO:
