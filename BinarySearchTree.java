@@ -393,10 +393,26 @@ public class BinarySearchTree<T extends Comparable<T>> implements BSTInterface<T
     and insert the duplicates.
     */
     public void doubleTree() {
-        
+        if(root.getInfo() == null){
+            System.out.println("Tree is empty");
+            return
+        }
+        else{
+            doubleTree(root)
+        }
     }
     private void doubleTree(Node node) {
-    
+        if(node.getLeft() != null){
+            Node newNode = doubleTree(node.getLeft());
+            newNode.getLeft() = node.getLeft();
+            node.setLeft() = newNode;
+        }
+        if(node.getRight() != null){
+            Node newNode = doubleTree(node.getRight());
+            newNode.getRight() = node.getRight();
+            node.setRight() = newNode;
+        }
+        return node;
     }
 
     //TODO:
