@@ -78,8 +78,19 @@ public class Main {
             System.out.print(afterRemove.next() + " ");
         }
         System.out.println("\n");
-        BinarySearchTree.maxDepth();
-        BinarySearchTree.minValue();
-        BinarySearchTree.doubleTree();
+        int maxDepth = bst.maxDepth();
+        int minValue = bst.minValue();
+        BinarySearchTree<Integer> bst2 = new BinarySearchTree<Integer>();
+        bst2.add(50);
+        bst2.add(40);
+        bst2.add(70);
+        bst2.add(60);
+        bst2.add(80);
+        boolean same = bst.sameTree(bst2);
+        System.out.println("Are the two trees structurally identical? " + same);
+        System.out.println("Max Depth: " + maxDepth + ", Min Value: " + minValue );
+        bst2.doubleTree();
+        same = bst.sameTree(bst2);
+        System.out.println("After duplicating second tree, are they structurally identical? " + same);
     }
 }
