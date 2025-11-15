@@ -78,5 +78,8 @@ public class Main {
             System.out.print(afterRemove.next() + " ");
         }
         System.out.println("\n");
+        BinarySearchTree.maxDepth();
+        BinarySearchTree.minValue();
+        BinarySearchTree.doubleTree();
     }
 }
